@@ -1,5 +1,5 @@
 /**
- * Java. Level 1. Lesson 5. Home work
+ * Java. Level 1. Lesson 5. Home work5
  *
  * @author Andry Krasikov
  * @version Aug 27, 2018
