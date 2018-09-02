@@ -33,7 +33,7 @@ class HomeWork7 {
 				cat.setSatiety(true);
 				System.out.println(cat.getName() + ": " + cat.getSatiety());
 				System.out.println(plate);
-				}	
+			}	
 		}
     }
 }
