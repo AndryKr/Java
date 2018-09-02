@@ -7,7 +7,10 @@
 
 class HomeWork7 {
     public static void main(String[] args) {
-        Cat[] cats = {new Cat("Murka", 3, false), new Cat("Barsik", 8, false), new Cat("Murzik", 5, false), new Cat("Boris", 3, false)};
+        Cat[] cats = {new Cat("Murka", 3, false), 
+		new Cat("Barsik", 10, false), 
+		new Cat("Murzik", 10, false), 
+		new Cat("Boris", 4, false)};
         Plate plate = new Plate(15);
         System.out.println(plate);
 		for(Cat cat: cats) {
@@ -17,21 +20,21 @@ class HomeWork7 {
 				System.out.println(cat.getName() + ": " + cat.getSatiety());
 			} else {
 				System.out.println(cat.getName() + ": " + cat.getSatiety());
-				//break;
 			}
 		}
 		System.out.println(plate);
-		plate.fill(15);
-		System.out.println(plate);
 		for(Cat cat: cats) {
-			if(cat.getSatiety() == false && plate.getFood() >= cat.getAppetite()) {
+			if(plate.getFood() < cat.getAppetite()) {
+			plate.fill(5);
+			System.out.println("подкинули 5 единиц еды, " + plate);
+			}
+			if(cat.getSatiety() == false) {
 				cat.eat(plate);
 				cat.setSatiety(true);
 				System.out.println(cat.getName() + ": " + cat.getSatiety());
-			}
+				System.out.println(plate);
+				}	
 		}
-		System.out.println(plate);
-		//System.out.println(plate + "\nMurka: " + cats[0].getSatiety() +  ", Barsik: " + cats[1].getSatiety() + ", Murzik: " + cats[2].getSatiety() + ", Boris: " + cats[3].getSatiety());
     }
 }
 
@@ -82,13 +85,12 @@ class Plate {
 		return food;
 	}
 	
-	void fill(int plate) {
-		this.food = plate; 
-		//return this.food;
+	void fill(int food) {
+		this.food += food; 
 	}
 
     @Override
     public String toString() {
-        return "Food: " + food;
+        return "в тарелке " + food + " единиц еды";
     }
 }
