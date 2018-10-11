@@ -22,7 +22,7 @@ public class Exceptions {
         }
     }
 
-    static int checkMass(String[][] mass) throws MyArrayDataException, MyArraySizeException {
+    static void checkMass(String[][] mass) throws MyArrayDataException, MyArraySizeException {
 
         int result = 0;
         if (mass == null || mass.length != size)
@@ -40,7 +40,7 @@ public class Exceptions {
                 }
             }
         }
-        return result;
+        System.out.println(result);
     }
 }
 
