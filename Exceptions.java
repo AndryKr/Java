@@ -14,7 +14,7 @@ public class Exceptions {
 
     public static void main(String[] args) {
         try {
-            arr(mass);
+            checkMass(mass);
         } catch (MyArrayDataException e) {
             e.printStackTrace();
         } catch (MyArraySizeException e) {
@@ -22,7 +22,7 @@ public class Exceptions {
         }
     }
 
-    static int arr(String[][] mass) throws MyArrayDataException, MyArraySizeException {
+    static int checkMass(String[][] mass) throws MyArrayDataException, MyArraySizeException {
 
         int result = 0;
         if (mass == null || mass.length != size)
@@ -35,8 +35,8 @@ public class Exceptions {
             for (int j = 0; j < mass[i].length; j++) {
                 try {
                     result += Integer.parseInt(mass[i][j]);
-                } catch (MyArrayDataException e) {
-                    throw new MyArrayDataException("Не верный символ(ы) в строке " + (i + 1) + "ячейке" + (j + 1));
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException("Не верный символ(ы) в строке " + (i + 1) + " ячейке " + (j + 1));
                 }
             }
         }
