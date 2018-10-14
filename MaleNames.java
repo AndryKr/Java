@@ -16,7 +16,7 @@ class MaleNames {
 
     public static void main(String[] args) {
         writeToAL(maleNames);
-        unifyNames(names);
+        infoNames(names);
     }
 
     static void writeToAL(String[] maleNames) {
@@ -24,17 +24,17 @@ class MaleNames {
             names.add(maleNames[i]);
         }
     }
-
-    static void unifyNames(ArrayList<String> maleNames) {
-        for (int i = 0; i < maleNames.size(); i++) {
+    static void infoNames(ArrayList<String> maleNames) {
+        for (int i = 0, k = 1; i < maleNames.size(); i++, k = 1) {
             for (int j = i+1; j < maleNames.size(); j++) {
-            if (maleNames.get(i) == maleNames.get(j)) {
-                maleNames.remove(j);
-                break;
+                if (maleNames.get(i) == maleNames.get(j)) {
+                    k++;
+                    maleNames.remove(j);
+                }
             }
+            System.out.println(maleNames.get(i) + " встречается " + k + " раз.");
         }
-    }
-        System.out.println(maleNames);
+        System.out.println("\nСписок унакальных имён\n" + maleNames);
         System.out.println("Уникальных имён в списке " + maleNames.size());
     }
 }
