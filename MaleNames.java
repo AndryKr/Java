@@ -32,7 +32,7 @@ class MaleNames {
                     maleNames.remove(j);
                 }
             }
-            System.out.println(maleNames.get(i) + " встречается " + k + " раз.");
+            System.out.println("Имя " + maleNames.get(i) + " встречается " + k + " раз(а).");
         }
         System.out.println("\nСписок унакальных имён\n" + maleNames);
         System.out.println("Уникальных имён в списке " + maleNames.size());
