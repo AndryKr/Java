@@ -24,18 +24,19 @@ class MaleNames {
             names.add(maleNames[i]);
         }
     }
-    static void infoNames(ArrayList<String> maleNames) {
-        for (int i = 0, k = 1; i < maleNames.size(); i++, k = 1) {
-            for (int j = i+1; j < maleNames.size(); j++) {
-                if (maleNames.get(i) == maleNames.get(j)) {
+
+    static void infoNames(ArrayList<String> names) {
+        for (int i = 0, k = 1; i < names.size(); i++, k = 1) {
+            for (int j = i+1; j < names.size(); j++) {
+                if (names.get(i) == names.get(j)) {
                     k++;
-                    maleNames.remove(j);
+                    names.remove(j);
                 }
             }
-            System.out.println("Имя " + maleNames.get(i) + " встречается " + k + " раз(а).");
+            System.out.println("Имя " + names.get(i) + " встречается " + k + " раз(а).");
         }
-        System.out.println("\nСписок унакальных имён\n" + maleNames);
-        System.out.println("Уникальных имён в списке " + maleNames.size());
+        System.out.println("\nСписок унакальных имён\n" + names);
+        System.out.println("Уникальных имён в списке " + names.size());
     }
 }
 
