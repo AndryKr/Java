@@ -10,7 +10,7 @@ import java.util.Arrays;
 class HomeWork5 {
 
     static final int size = 10000000;
-    static final int coinThreads = 3;
+    static final int coinThreads = 20;
     static final int h = size / coinThreads;
 
     public static void main(String[] args) {
@@ -48,13 +48,13 @@ class HomeWork5 {
 
         }
 
-        try {
-            for (int i = 0; i < coinThreads; i++) {
-            t[i].join();
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            for (int i = 0; i < coinThreads; i++) {
+//            t[i].join();
+//            }
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         for (int i = 0; i < coinThreads; i++) {
             System.arraycopy(ah[i], 0, arr, h*i, h);
