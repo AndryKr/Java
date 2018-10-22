@@ -21,7 +21,6 @@ class HomeWork5 {
 
     void doIt() {
         float[] arr = new float[size];
-
         Arrays.fill(arr, 1);
         long a = System.currentTimeMillis();
         for (int i = 0; i < size; i++)
@@ -38,14 +37,12 @@ class HomeWork5 {
         float[][] ah = new float[coinThreads][h];
         Arrays.fill(arr, 1);
         long a = System.currentTimeMillis();
-
         Thread[] t = new Thread[coinThreads];
-
+        
         for (int i = 0; i < coinThreads; i++) {
             System.arraycopy(arr, h*i, ah[i], 0, h);
             t[i] = new Thread(new CalcCellValue(ah[i]));
             t[i].start();
-
         }
 
         try {
