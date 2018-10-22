@@ -43,7 +43,7 @@ class HomeWork5 {
 
         for (int i = 0; i < coinThreads; i++) {
             System.arraycopy(arr, h*i, ah[i], 0, h);
-            t[i] = new Thread(new CalcCellValue(ah[i], h*i));
+            t[i] = new Thread(new CalcCellValue(ah[i]));
             t[i].start();
 
         }
@@ -65,20 +65,18 @@ class HomeWork5 {
 
     class CalcCellValue implements Runnable {
         private float[] array;
-        private int shift;
 
-        CalcCellValue(float[] array, int shift) {
+        CalcCellValue(float[] array) {
             this.array = array;
-            this.shift = shift;
         }
 
         @Override
         public void run() {
             for (int i = 0; i < array.length; i++)
                 array[i] = (float)(array[i] *
-                        Math.sin(0.2f + (i + shift) / 5) *
-                        Math.cos(0.2f + (i + shift) / 5) *
-                        Math.cos(0.4f + (i + shift) / 2));
+                        Math.sin(0.2f + i / 5) *
+                        Math.cos(0.2f + i / 5) *
+                        Math.cos(0.4f + i / 2));
         }
     }
 }
