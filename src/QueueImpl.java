@@ -1,3 +1,10 @@
+/**
+ * Java. Alg. Lesson 3. Homework
+ *
+ * @author Andry Krasikov
+ * @version Nov 22, 2018
+ */
+
 public class QueueImpl implements Queue {
 
     public static final int DEFAULT_FRONT = 0;

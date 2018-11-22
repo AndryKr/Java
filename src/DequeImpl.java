@@ -1,6 +1,11 @@
+/**
+ * Java. Alg. Lesson 3. Homework
+ *
+ * @author Andry Krasikov
+ * @version Nov 22, 2018
+ */
+
 public class DequeImpl implements Deque{
-    //public static final int DEFAULT_FRONT = 0;
-   // public static final int DEFAULT_REAR = -1;
 
     private int[] data;
     private int size;

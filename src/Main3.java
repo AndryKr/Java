@@ -1,3 +1,10 @@
+/**
+ * Java. Alg. Lesson 3. Homework
+ *
+ * @author Andry Krasikov
+ * @version Nov 22, 2018
+ */
+
 public class Main3 {
 
     public static void main(String[] args) {
