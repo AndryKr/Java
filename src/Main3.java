@@ -67,8 +67,21 @@ public class Main3 {
         }
     }
 
-    public static void testDeque() {
-
+    private static void testDeque() {
+        Deque dequeue = new DequeImpl(5);
+        dequeue.insertRight(1);
+        dequeue.insertRight(2);
+        dequeue.insertRight(4);
+        dequeue.insertRight(6);
+        dequeue.insertRight(9);
+        dequeue.removeRight();
+        dequeue.removeLeft();
+        dequeue.insertRight(8);
+        dequeue.insertLeft(0);
+        System.out.println("\nТест Deque");
+        while ( !dequeue.isEmpty() ) {
+            System.out.println(dequeue.removeLeft());
         }
     }
 }
+
