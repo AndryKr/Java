@@ -5,7 +5,7 @@ public class Main3 {
         testBrackets();
         readString();
         testQueue();
-        testDeque(new DequeImpl(9));
+        testDeque();
     }
 
     public static void readString() {
@@ -67,26 +67,8 @@ public class Main3 {
         }
     }
 
-    public static void testDeque(Deque deque) {
-        for (int i = 0; i < 10/2; i++) {
-            deque.insertLeft(i);
-            deque.insertRight(i);
+    public static void testDeque() {
+
         }
     }
-
-//    private static void testDeque() {
-//        Deque deque = new DequeImpl(8);
-//        deque.insertLeft(1);
-//        deque.insertLeft(2);
-//        deque.insertLeft(3);
-//        deque.insertLeft(4);
-//        System.out.println(deque.toString());
-//        deque.insertRight(5);
-//        deque.insertLeft(6);
-//        System.out.println(deque.toString());
-//        deque.removeLeft();
-//        deque.removeRight();
-//        System.out.println(deque.toString());
-//    }
-
 }
