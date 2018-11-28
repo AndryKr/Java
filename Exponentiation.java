@@ -10,13 +10,13 @@ import java.util.Scanner;
 
 public class Exponentiation {
     public static void main(String[] args){
-        int number = getByte("Введите целое число");
-        int degree = getByte("Введите степень (целое число)");
+        byte number = getByte("Введите целое число");
+        byte degree = getByte("Введите степень (целое число)");
         System.out.println(exponentiation(number,degree));
     }
 
-    static int getByte(String message){
-        int number;
+    static byte getByte(String message){
+        byte number;
         Scanner sc = new Scanner(System.in);
         System.out.println(message);
         while (true){
