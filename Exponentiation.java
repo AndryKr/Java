@@ -10,18 +10,18 @@ import java.util.Scanner;
 
 public class Exponentiation {
     public static void main(String[] args){
-        int number = getInt("Введите целое число");
-        int degree = getInt("Введите степень (целое число)");
+        int number = getByte("Введите целое число");
+        int degree = getByte("Введите степень (целое число)");
         System.out.println(exponentiation(number,degree));
     }
 
-    static int getInt(String message){
+    static int getByte(String message){
         int number;
         Scanner sc = new Scanner(System.in);
         System.out.println(message);
         while (true){
             try {
-                number = sc.nextInt();
+                number = sc.nextByte();
                 return number;
             } catch (InputMismatchException ex) {
                 System.out.println("Некорректный ввод");
