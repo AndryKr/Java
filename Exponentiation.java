@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Exponentiation {
     public static void main(String[] args){
         int number = getInt("Введите целое число");
-        int degree = getInt("Введите степень");
+        int degree = getInt("Введите степень (целое число)");
         System.out.println(exponentiation(number,degree));
     }
 
