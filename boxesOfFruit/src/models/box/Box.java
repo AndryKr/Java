@@ -23,7 +23,9 @@ public class Box<T extends Fruit> {
     }
 
     public boolean compare(Box box) {
-        return Math.abs(weightBox - box.getWeightBox()) < 0.0001;
-    }
-
+        if (BoxService.getInstance.getWeight() == box.getWeightBox()) {
+            return true;
+        } else
+            return false;
+   }
 }
