@@ -1,3 +1,7 @@
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class MainClass {
 
     public static final int CARS_COUNT = 4;
@@ -12,11 +16,22 @@ public class MainClass {
             cars[i] = new Car(race, 20 + (int) (Math.random() * 10));
         }
 
+        ExecutorService executorService = Executors.newFixedThreadPool(CARS_COUNT);
+
         for (int i = 0; i < cars.length; i++) {
-            new Thread(cars[i]).start();
+            executorService.execute(cars[i]);
         }
 
-        System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
-        System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
+        try {
+            race.getCyclicBarrier().await();
+            System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
+            race.getCyclicBarrier().await();
+            System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (BrokenBarrierException e) {
+            e.printStackTrace();
+        }
+        executorService.shutdown();
     }
 }
