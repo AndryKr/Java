@@ -1,9 +1,4 @@
-import java.util.concurrent.atomic.AtomicBoolean;
-
 public class Road extends Stage {
-
-    private boolean winnerIsExists;
-    private AtomicBoolean winner;
 
     public Road(int length) {
         this.length = length;
