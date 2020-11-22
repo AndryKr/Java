@@ -3,4 +3,5 @@
 *.iws
 *.db
 out/
+target/
 src/META-INF/
